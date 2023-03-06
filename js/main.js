@@ -2,13 +2,10 @@ let grigliaDom = document.getElementById('griglia');
 let button = document.getElementById('btn');
 let reset = document.getElementById('reset');
 let blacklist = [];
-
-
-
-
 button.addEventListener('click', function () {
     let livello = parseInt(document.querySelector('#livello').value);
     grigliaDom.innerHTML = '';
+    blacklist = [];
     for (let i = 0; i < 16; i++) {
         blacklist.push(generateUniqueRandomNumber(1, livello));
     }
@@ -36,10 +33,9 @@ button.addEventListener('click', function () {
 
 reset.addEventListener('click', function () {
     grigliaDom.innerHTML = '';
+    blacklist= [];
 
 })
-
-
 
 function creazioneQuadrato(livello, number) {
     let nuovoElemento = document.createElement('div');
@@ -59,8 +55,6 @@ function creazioneQuadrato(livello, number) {
     return nuovoElemento;
 
 }
-
-
 function generateUniqueRandomNumber(min, max) {
     let randomNumber;
 
@@ -78,7 +72,6 @@ function generateUniqueRandomNumber(min, max) {
     return randomNumber;
 
 }
-
 
 function generateRandomNumber(min, max) {
 
