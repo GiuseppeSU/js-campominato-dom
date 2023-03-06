@@ -1,100 +1,101 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-header{
+header {
     height: 100px;
     width: 100%;
 }
 
-.container-header{
+.container-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
 }
 
-.d-flex{
+.d-flex {
     display: flex;
     align-items: center;
 }
-.image{
+
+.image {
     width: 80px;
 }
 
-#boolean{
+#boolean {
     font-size: 50px;
     color: rgb(7, 7, 7);
     font-weight: bold;
     font-family: sans-serif;
 }
 
-.header-btn{
+.header-btn {
     margin-right: 60px;
-    
+
 }
 
 main {
     padding: 20px;
     background-color: aquamarine;
-    
+
 }
 
 
 
-#btn{
+#btn {
     padding: 10px;
-   
+
 }
 
-#griglia{
+#griglia {
     padding-top: 10px;
     width: 600px;
     height: 600px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    
+
 }
 
-.square{
+.square {
     width: calc(100% / 10);
     height: calc(100% / 10);
     border: solid 2px lime;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .square.clicked {
     background-color: aqua
 }
 
-#reset{
+#reset {
     margin: 0px 10px;
-    padding: 10px ;
+    padding: 10px;
 
 }
 
-#livello{
-    margin-right: 30px ;
-    padding: 10px ;
+#livello {
+    margin-right: 30px;
+    padding: 10px;
 
 }
 
-footer{
+footer {
     height: 100px;
     width: 100%;
 }
 
 footer p {
-    margin:20px ;
+    margin: 20px;
 }
 
 
-.bomba{
+.bomba {
     background-color: red;
 }

@@ -6,46 +6,46 @@ let blacklist = [];
 
 
 
-button.addEventListener('click' , function(){
+button.addEventListener('click', function () {
     let livello = parseInt(document.querySelector('#livello').value);
-    grigliaDom.innerHTML='';
-    for (let i = 0; i < 16; i++){
-        blacklist.push(generateUniqueRandomNumber(1,livello));
+    grigliaDom.innerHTML = '';
+    for (let i = 0; i < 16; i++) {
+        blacklist.push(generateUniqueRandomNumber(1, livello));
     }
     for (let i = 1; i < livello + 1; i++) {
         const quadrato = creazioneQuadrato(livello, i);
-        quadrato.addEventListener( 'click', function (){
-            
+        quadrato.addEventListener('click', function () {
+
             console.log(i);
-            if (blacklist.includes(i)){
+            if (blacklist.includes(i)) {
                 this.classList.add('bomba');
 
-                 
-            }else{
+
+            } else {
                 this.classList.toggle('clicked');
 
             }
         });
-        
-        
+
+
         grigliaDom.append(quadrato);
     }
-   
+
     console.log(blacklist);
 })
 
-reset.addEventListener('click' , function (){
+reset.addEventListener('click', function () {
     grigliaDom.innerHTML = '';
 
 })
 
 
 
-function creazioneQuadrato (livello, number) {
+function creazioneQuadrato(livello, number) {
     let nuovoElemento = document.createElement('div');
     nuovoElemento.classList.add('square');
-    nuovoElemento.innerHTML=number;
-    
+    nuovoElemento.innerHTML = number;
+
     if (isOddEven(number) == 'even') {
         nuovoElemento.classList.add('square-even');
     } else {
@@ -55,18 +55,18 @@ function creazioneQuadrato (livello, number) {
     let cellPerSide = Math.sqrt(livello);
     nuovoElemento.style.width = `calc(100% / ${cellPerSide})`;
     nuovoElemento.style.height = `calc(100% / ${cellPerSide})`;
-   
+
     return nuovoElemento;
-    
+
 }
 
 
-function generateUniqueRandomNumber( min, max) {
+function generateUniqueRandomNumber(min, max) {
     let randomNumber;
-     
-        let isValidNumber = false;
 
-    
+    let isValidNumber = false;
+
+
 
     while (!isValidNumber) {
         randomNumber = generateRandomNumber(min, max);
@@ -81,11 +81,11 @@ function generateUniqueRandomNumber( min, max) {
 
 
 function generateRandomNumber(min, max) {
-    
-        const number =  Math.floor(Math.random() * (max-min)) + min;
-        console.log(number);
 
-    
+    const number = Math.floor(Math.random() * (max - min)) + min;
+    console.log(number);
+
+
     return number;
 }
 
